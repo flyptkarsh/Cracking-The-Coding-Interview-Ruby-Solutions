@@ -1,8 +1,7 @@
 # replace all spaces in a string with %20
 
 def urlify(string)
-  string.strip!
-  string.gsub(" ", "%20")
+  string.strip.gsub(" ", "%20")
 end
 
 # wow this was way easier than in Java..
