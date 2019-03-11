@@ -2,7 +2,7 @@
 # Write a recursive function to multiply two positive integers without using
 # the * or / operator. You can use addtion and subtraction.
 
-# simple brute force solution
+# simple recursive solution
 
 def multiply_recusive(x, y)
   if y == 0
