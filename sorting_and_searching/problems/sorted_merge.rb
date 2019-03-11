@@ -1,6 +1,8 @@
+# 10.1 Sorted Merge
 # You are given two sorted arrays. a and b,
 # where a has a large enough buffer at the end to hold b.
 # write a method to merge a into b in a sorted order.
+
 def sorted_merge( a, b )
   index_a = a.size - 1# index of last element in array a
   index_b = b.size - 1 # index of last element in array b
