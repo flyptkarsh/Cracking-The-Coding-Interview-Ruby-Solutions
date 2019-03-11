@@ -1,3 +1,4 @@
+# 1.2 Check Permutation
 # given two strings check if a string is a permutation of another.
 # solution one sort the strings
 def check_permutation_brute_force?(str_1, str_2)
