@@ -9,4 +9,47 @@
 # The two strings will always be equal, or one char shorter or
 # longer than each other if they are one edit away.
 
-# removal is the inverse of insertion, you don't need to check both   
+# removal is the inverse of insertion, you don't need to check both
+def one_edit_away(first, second)
+  if (first.length == second.length)
+    one_edit_replace(first, second)
+  elsif (first.length + 1 == second.length)
+    one_edit_insert(first, second)
+  elsif (first.length - 1 == second.length)
+    one_edit_insert(first, second)
+  else
+    return false
+  end
+end
+
+def one_edit_replace(first, second)
+  found_difference = false
+  first.chars.each_with_index do |val, index|
+    if (val != second.chars[index])
+      if found_difference
+        return false
+      else
+        found_difference = true
+      end
+    end
+  end
+  return true
+end
+
+def one_edit_insert(first, second)
+  longer = first.length > second.length ? first : second
+  shorter = first.length > second.length ? second : first
+  longer.chars.each_with_index do |val, index|
+    word = longer.chars
+    word.delete_at(index)
+    if shorter == word.join("")
+        return true
+    end
+  end
+  return false
+end
+
+p one_edit_away("cat", "hat")
+p one_edit_away("crt", "hat")
+p one_edit_away("hats", "hat")
+p one_edit_away("rats", "hat")
