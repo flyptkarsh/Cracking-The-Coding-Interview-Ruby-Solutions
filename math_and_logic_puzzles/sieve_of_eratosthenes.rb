@@ -20,7 +20,6 @@ def sieve(max)
   primes.each do |prime|
     #skip if nil
     next unless prime
-
     # break if we are past the square root of the max value
     break if prime*prime > max
     counter += 1
