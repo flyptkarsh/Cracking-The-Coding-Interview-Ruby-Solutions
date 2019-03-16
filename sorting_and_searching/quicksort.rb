@@ -5,6 +5,7 @@ def quicksort(arr, first, last)
     quicksort(arr, first, p_index - 1)
     quicksort(arr, p_index + 1, last)
   end
+  arr
 end
 
 def partition(arr, first, last)
@@ -26,3 +27,8 @@ def partition(arr, first, last)
   arr[last] = temp
   return p_index
 end
+
+
+arr = [ 443, 74, 133, 24, 11, 23,  44, 81, 1496]
+
+p quicksort(arr, 0, arr.size - 1 )

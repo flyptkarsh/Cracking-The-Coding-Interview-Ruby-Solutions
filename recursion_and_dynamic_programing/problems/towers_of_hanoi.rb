@@ -1,6 +1,4 @@
 # 8.6 Towers of Hanoi
-
-
 def construct_board(n)
   @towers = [[*1..n].reverse,[], []]
 end
