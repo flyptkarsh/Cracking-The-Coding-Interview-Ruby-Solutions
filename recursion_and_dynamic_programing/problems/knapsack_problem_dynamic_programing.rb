@@ -22,7 +22,6 @@ def rec_ks(weights, values, capacity)
   ks(@vals.length + 1, capacity)
 end
 
-
 # add memoization
 def rec_ks_with_memoization(weights, values, capacity)
   @weights = w
