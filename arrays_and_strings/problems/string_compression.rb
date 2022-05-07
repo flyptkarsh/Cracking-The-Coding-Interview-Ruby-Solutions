@@ -137,7 +137,7 @@ end
 
 puts 'Speed Test for Each Solution (worst case input):'
 # this test highlights why solution 2 is the most efficient for some inputs
-str = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+str = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
 Benchmark.bm do |x|
   x.report { brute_force_compress(str) }
   x.report { compress_solution_one(str) }
