@@ -1,5 +1,6 @@
-# 239. Sliding Window Maximum
+# frozen_string_literal: true
 
+# 239. Sliding Window Maximum
 
 # Given an array nums, there is a sliding window of size k which is moving from
 # the very left of the array to the very right. You can only see the k numbers
@@ -21,7 +22,7 @@
 
 def max_sliding_window(arr, k)
   max = arr[0]
-  arr.each.with_index do |v, i|
+  arr.each.with_index do |_v, i|
     if i + k - 1 < arr.size
       window = arr[i..i + k]
       max = window.max if window.max > max

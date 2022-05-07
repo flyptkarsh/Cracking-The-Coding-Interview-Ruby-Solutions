@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Find if two rectangles overlap
 # Source: https://www.geeksforgeeks.org/find-two-rectangles-overlap/
 
@@ -19,9 +21,10 @@
 
 class Point
   attr_accessor :x, :y
-  def initialize(x,y)
-      @x = x
-      @y = y
+
+  def initialize(x, y)
+    @x = x
+    @y = y
   end
 end
 
@@ -29,6 +32,7 @@ end
 def do_overlap?(l1, r1, l2, r2)
   return false if (l1.x >= r2.x) || (l2.x >= r1.x) # if one rectangle is to the side of the other
   return false if (l1.y <= r2.y) || (l2.y <= r1.y) # if one rectangle is above the other
+
   true
 end
 

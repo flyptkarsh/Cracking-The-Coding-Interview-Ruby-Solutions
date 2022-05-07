@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 8.9 Parens:
 # Print all combinations of balanced parentheses
 
@@ -10,12 +12,12 @@
 # If the count of opening bracket is less than n then call the function recursively with the following parameters String s + “{“, count of opening bracket o + 1, count of closing bracket c, and n.
 
 def print_parens(str, n)
-  print_parens_rec(str, 0, n, 0, 0) if n > 0
+  print_parens_rec(str, 0, n, 0, 0) if n.positive?
 end
 
 def print_parens_rec(str, pos, n, open, close)
   if close == n # base case
-    return str
+    str
   else
     if open > close
       str[pos] = '}'
@@ -29,5 +31,5 @@ def print_parens_rec(str, pos, n, open, close)
 end
 
 n = 3
-str = [""] * 2 * n
+str = [''] * 2 * n
 print_parens(str, n)

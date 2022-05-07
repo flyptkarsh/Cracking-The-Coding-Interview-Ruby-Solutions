@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 # 8.1 Triple Step
 # a child running up a staircase with n steps can hop 2, 2 or 3 steps at a
 # time. Implement a method to count how many possible ways the child can run
 # up the stairs.
-
 
 # brute force recursive solution
 # def count_ways(stairs)
@@ -22,15 +23,15 @@ def count_ways_memo(n)
 end
 
 def count_ways(n, memo)
-  if n < 0
-    return 0;
-  elsif n == 0
-    return 1
+  if n.negative?
+    0
+  elsif n.zero?
+    1
   elsif (memo[n]) && (memo[n] > -1)
-    return memo[n]
+    memo[n]
   else
     memo[n] = count_ways(n - 1, memo) + count_ways(n - 2, memo) + count_ways(n - 3, memo)
-    return memo[n]
+    memo[n]
   end
 end
 

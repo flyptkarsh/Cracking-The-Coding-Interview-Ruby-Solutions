@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # 8.6 Towers of Hanoi
 def construct_board(n)
-  @towers = [[*1..n].reverse,[], []]
+  @towers = [[*1..n].reverse, [], []]
 end
 
-def move(num_disks, start=0, target=1, using=2)
+def move(num_disks, start = 0, target = 1, using = 2)
   if num_disks == 1
     @towers[target] << @towers[start].pop
     p "Moved disk from #{start} to #{target}: #{@towers}"

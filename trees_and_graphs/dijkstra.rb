@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Dikstra's algorithm
 # http://rosettacode.org/wiki/Dijkstra%27s_algorithm#Ruby
 

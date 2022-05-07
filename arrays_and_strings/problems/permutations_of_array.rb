@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # all permutations of an array
 # the ruby way
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Reference https://www.rubyguides.com/2017/08/ruby-linked-list/
 class Node
   attr_accesor :next
@@ -33,18 +35,18 @@ class LinkedList
     old_next = node.next
     node.next = Node.new(value)
     node.next.next = old_next
-
   end
 
   def find_tail
     node = @head
-    return node if !node.next
-    return node if !node.next while (node = node.next)
+    return node unless node.next
+
+    return node unless node.next while (node = node.next)
   end
 
   def find(value)
     node = @head
-    return false if !node.next
+    return false unless node.next
     return node if node.value == value
 
     while (node = node.next)
@@ -62,13 +64,13 @@ class LinkedList
   end
 
   def find_before(value)
-      node = @head
-      return false if !node.next
-      return node if node.next.value == value
+    node = @head
+    return false unless node.next
+    return node if node.next.value == value
 
-      while (node = node.next)
-        return node if node.next && node.next.value == value
-      end
+    while (node = node.next)
+      return node if node.next && node.next.value == value
+    end
   end
 
   def print_list

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 1.5 One Away
 # There are three types of edits that can be performed on strings:
 # insert a character, remove a character, or replace a character.
@@ -11,21 +13,21 @@
 
 # removal is the inverse of insertion, you don't need to check both
 def one_edit_away(first, second)
-  if (first.length == second.length)
+  if first.length == second.length
     one_edit_replace(first, second)
-  elsif (first.length + 1 == second.length)
+  elsif first.length + 1 == second.length
     one_edit_insert(first, second)
-  elsif (first.length - 1 == second.length)
+  elsif first.length - 1 == second.length
     one_edit_insert(first, second)
   else
-    return false
+    false
   end
 end
 
 def one_edit_replace(first, second)
   found_difference = false
   first.chars.each_with_index do |val, index|
-    if (val != second.chars[index])
+    if val != second.chars[index]
       if found_difference
         return false
       else
@@ -33,23 +35,21 @@ def one_edit_replace(first, second)
       end
     end
   end
-  return true
+  true
 end
 
 def one_edit_insert(first, second)
   longer = first.length > second.length ? first : second
   shorter = first.length > second.length ? second : first
-  longer.chars.each_with_index do |val, index|
+  longer.chars.each_with_index do |_val, index|
     word = longer.chars
     word.delete_at(index)
-    if shorter == word.join("")
-        return true
-    end
+    return true if shorter == word.join('')
   end
-  return false
+  false
 end
 
-p one_edit_away("cat", "hat")
-p one_edit_away("crt", "hat")
-p one_edit_away("hats", "hat")
-p one_edit_away("rats", "hat")
+p one_edit_away('cat', 'hat')
+p one_edit_away('crt', 'hat')
+p one_edit_away('hats', 'hat')
+p one_edit_away('rats', 'hat')

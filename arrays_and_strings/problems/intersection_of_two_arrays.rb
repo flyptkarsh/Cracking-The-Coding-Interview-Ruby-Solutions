@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 349. Intersection of Two Arrays
 # Given two arrays, write a function to compute their intersection.
 # https://leetcode.com/articles/intersection-of-two-arrays/
@@ -7,10 +9,10 @@
 # the normal non coding interview way
 # array_one && array_two
 
- # The naive approach would be to iterate along the first array nums1 and to
- # check for each value if this value in nums2 or not. If yes - add the value
- # to output. Such an approach would result in a pretty bad
- # \mathcal{O}(n \times m)O(n×m) time complexity, where n and m are arrays' lengths.
+# The naive approach would be to iterate along the first array nums1 and to
+# check for each value if this value in nums2 or not. If yes - add the value
+# to output. Such an approach would result in a pretty bad
+# \mathcal{O}(n \times m)O(n×m) time complexity, where n and m are arrays' lengths.
 
 # To solve the problem in linear time, let's use the structure set, which
 # provides in/contains operation in \mathcal{O}(1)O(1) time in average case.
@@ -21,7 +23,7 @@
 require 'set'
 
 # syntax for converting an array into a set
-[1,0,1,0,3,4,5].to_set # => #<Set: {1, 0, 3, 4, 5}>
+[1, 0, 1, 0, 3, 4, 5].to_set # => #<Set: {1, 0, 3, 4, 5}>
 
 def intersection_using_sets(arr_a, arr_b)
   set_a = arr_a.to_set

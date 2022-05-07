@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Queue
   def initialize
-    @store = Array.new
+    @store = []
   end
 
   def dequeue

@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 def balanced?(s)
   return false if s.length.odd?
-  return false if s =~ /[^\[\]\(\)\{\}]/
-  pairs = {'{'=>'}', '['=>']', '('=>')'}
+  return false if s =~ /[^\[\](){}]/
+
+  pairs = { '{' => '}', '[' => ']', '(' => ')' }
   s.chars do |bracket|
     expectation = pairs[bracket]
     if expectation

@@ -1,25 +1,27 @@
-#fibonacci numbers pg.131
+# frozen_string_literal: true
+
+# fibonacci numbers pg.131
 
 # calculate the nth fibonacci number recursively
 def fibonacci_recursive_basic(n)
-  return 0 if n == 0
+  return 0 if n.zero?
   return 1 if n == 1
-  return fibonacci_recursive_basic(n - 1) + fibonacci_recursive_basic(n - 2)
+
+  fibonacci_recursive_basic(n - 1) + fibonacci_recursive_basic(n - 2)
 end
 
 # calculate the nth fibonacci number with memoization
 
 # bad but working solution
 def fibonacci(n)
-  if (n <= 1)
-    return n
-  end
-  fibonacci(n-1) + fibonacci(n-2)
+  return n if n <= 1
+
+  fibonacci(n - 1) + fibonacci(n - 2)
 end
 
 def fib_store(n)
   fib_arr = []
-  (0..n).each {|x| fib_arr << fibonacci(x)}
+  (0..n).each { |x| fib_arr << fibonacci(x) }
   fib_arr
 end
 
@@ -33,7 +35,7 @@ def better_fibonacci(n)
     if n <= 1
       n
     else
-      @fib_hash[n] ||= better_fibonacci(n-1) + better_fibonacci(n-2)
+      @fib_hash[n] ||= better_fibonacci(n - 1) + better_fibonacci(n - 2)
     end
 end
 

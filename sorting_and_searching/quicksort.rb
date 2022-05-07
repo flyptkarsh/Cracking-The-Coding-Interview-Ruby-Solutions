@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Ruby implementation of quicksort
 def quicksort(arr, first, last)
   if first < last
@@ -25,10 +27,9 @@ def partition(arr, first, last)
   temp = arr[p_index]
   arr[p_index] = pivot
   arr[last] = temp
-  return p_index
+  p_index
 end
 
+arr = [443, 74, 133, 24, 11, 23, 44, 81, 1496]
 
-arr = [ 443, 74, 133, 24, 11, 23,  44, 81, 1496]
-
-p quicksort(arr, 0, arr.size - 1 )
+p quicksort(arr, 0, arr.size - 1)

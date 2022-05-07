@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Stack | Set 3 (Reverse a string using stack)
 # Given a string, reverse it using stack. For example “GeeksQuiz” should be converted to “ziuQskeeG”.
 #
@@ -11,7 +13,7 @@
 # Implementing a simple stack class
 class Stack
   def initialize
-    @store = Array.new
+    @store = []
   end
 
   def pop
@@ -28,15 +30,13 @@ class Stack
   end
 end
 
-
-
 def reverse_with_stack(str)
   stack = Stack.new
   str.chars.each do |value|
     stack.push(value)
   end
-  str.chars.map.with_index do |value, index|
-    str[index] = stack.pop()
+  str.chars.map.with_index do |_value, index|
+    str[index] = stack.pop
   end
   str
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BinaryTree
   class Node
     attr_reader :value
@@ -7,10 +9,7 @@ module BinaryTree
       @value = v
     end
   end
-
 end
-
-
 
 tree = BinaryTree::Node.new(10)
 tree.left = BinaryTree::Node.new(5)

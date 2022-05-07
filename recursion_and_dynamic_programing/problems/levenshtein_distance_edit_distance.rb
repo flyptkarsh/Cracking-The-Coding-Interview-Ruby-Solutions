@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Edit Distance | DP-5
 # Given two strings str1 and str2 and below operations that can performed on str1.
 # Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
@@ -36,33 +38,30 @@
 def edit_distance(str1, str2, m, n)
   # If first string is empty, the only option is to
   # insert all characters of second string into first
-  return m if m == 0
-  return n if n == 0
+  return m if m.zero?
+  return n if n.zero?
   # If last characters of two strings are same, nothing
   # much to do. Ignore last characters and get count for
   # remaining strings.
-  if str1[m-1] == str2[n-1]
-    return edit_distance(str1, str2, m-1, n-1)
-  end
+  return edit_distance(str1, str2, m - 1, n - 1) if str1[m - 1] == str2[n - 1]
+
   # If last characters are not same, consider all three
   # operations on last character of first string, recursively
   # compute minimum cost for all three operations and take
   # minimum of three values.
-  return 1 + [ edit_distance(str1, str2, m, n-1),     # Insert
-               edit_distance(str1, str2, m-1, n),     # Remove
-               edit_distance(str1, str2, m-1, n-1)    # Replace
-             ].min
-
+  1 + [edit_distance(str1, str2, m, n - 1), # Insert
+       edit_distance(str1, str2, m - 1, n), # Remove
+       edit_distance(str1, str2, m - 1, n - 1) # Replace
+].min
 end
 
-str1 = "sunday"
-str2 = "saturday"
+str1 = 'sunday'
+str2 = 'saturday'
 print editDistance(str1, str2, len(str1), len(str2))
 
 # Same problem with memoization and dynamic programming
 # helper method recursion
 def dp_edit_distance(str1, str2)
-
   @dp = [] # use a 2d array to memoize intermediate results
   str1.length.times do
     @dp.push(Array.new(str2.length))
@@ -72,28 +71,27 @@ def dp_edit_distance(str1, str2)
     # If first string is empty, the only option is to
     # insert all characters of second string into first
     return @dp[m][n] if @dp[m][n]
-    return m if m == 0
-    return n if n == 0
+    return m if m.zero?
+    return n if n.zero?
     # If last characters of two strings are same, nothing
     # much to do. Ignore last characters and get count for
     # remaining strings.
-    if str1[m-1] == str2[n-1]
-      return edit_distance(str1, str2, m-1, n-1)
-    end
+    return edit_distance(str1, str2, m - 1, n - 1) if str1[m - 1] == str2[n - 1]
+
     # If last characters are not same, consider all three
     # operations on last character of first string, recursively
     # compute minimum cost for all three operations and take
     # minimum of three values.
-    ed =  1 + [ edit_distance(str1, str2, m, n-1),     # Insert
-                edit_distance(str1, str2, m-1, n),     # Remove
-                edit_distance(str1, str2, m-1, n-1)    # Replace
-              ].min
+    ed = 1 + [edit_distance(str1, str2, m, n - 1), # Insert
+              edit_distance(str1, str2, m - 1, n), # Remove
+              edit_distance(str1, str2, m - 1, n - 1)    # Replace
+].min
     @db[m][n] = ed
-    return ed
+    ed
   end
   edit_distance(str1, str2, str1.length, str2.length)
 end
 
-str1 = "sunday"
-str2 = "saturday"
+str1 = 'sunday'
+str2 = 'saturday'
 print editDistance(str1, str2, len(str1), len(str2))

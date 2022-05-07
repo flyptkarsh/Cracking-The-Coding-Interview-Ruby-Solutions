@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Total area of two overlapping rectangles
 # Given two overlapping rectangles on a plane.
 # We are given bottom left and top right points of the two rectangles.
@@ -12,6 +14,7 @@
 # Output : Total Area = 16
 class Point
   attr_accessor :x, :y
+
   def initialize(x, y)
     @x = x
     @y = y
