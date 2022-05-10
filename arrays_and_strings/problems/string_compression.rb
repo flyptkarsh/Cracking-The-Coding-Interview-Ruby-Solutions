@@ -30,8 +30,9 @@ def brute_force_compress(str)
 end
 
 # why this is bad:
-# Sting concatenation is O(n^2), accoring to the book.
+# Sting concatenation is O(n^2), according to the book.
 # although string concatention in Ruby is much more optimized than string concatenation in C.
+# not 100% sure this is accurate for Ruby
 
 puts('Brute force solution test:')
 result = brute_force_compress(test_input)
@@ -66,7 +67,7 @@ result = compress_solution_one(test_input_two)
 puts(result == test_result_two ? '*' : "FAILING: #{test_input_two} returns #{result} instead of #{test_result_two}")
 
 # Solution 2:
-# this soulution is more efficient than solution 1 for larger inputs
+# This soulution is more efficient than solution 1 for larger inputs
 # because it will check if it can compress to something shorter before starting before.
 
 def compress_solution_two(str)
@@ -88,7 +89,7 @@ def compress_solution_two(str)
   compressed_str
 end
 
-# pg 202 return the length of the compressed string
+# pg. 202, return the length of the compressed string
 def compressed_size(str_chars, str_size)
   final_size = 0
   count_consecutive = 0

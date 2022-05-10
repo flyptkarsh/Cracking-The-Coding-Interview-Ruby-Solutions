@@ -24,7 +24,7 @@ result = triple_step_brute_force(12)
 puts(result == 927 ? '*' : "FAILING: triple_step_brute_force(12) returns #{result} instead of 927")
 # this recusion occurs several times for the same step in the brute force solution.
 
-# Improve this solution with memoization
+# Improve this solution with memoization, pg: 343
 def triple_step_memo(stairs)
   memo = Array.new(stairs + 1)
   triple_step(stairs, memo)
