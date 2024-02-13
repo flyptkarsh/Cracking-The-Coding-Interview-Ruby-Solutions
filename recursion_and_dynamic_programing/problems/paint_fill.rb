@@ -5,7 +5,7 @@
 # fill in the surrounding area until the color changes from the original color.
 def paint_fill(screen, x, y, new_color, original_color = nil)
   # Check for out-of-bounds coordinates
-  return if x < 0 || x >= screen.length || y < 0 || y >= screen[0].length
+  return if x.negative? || x >= screen.length || y.negative? || y >= screen[0].length
 
   # If original_color is not set, use the color of the starting point
   original_color = screen[x][y] if original_color.nil?
