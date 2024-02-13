@@ -26,7 +26,7 @@ class GameOfLife
 
         new_board[y][x] = if cell == 1 && live_neighbors.between?(2, 3)
                             1
-                          elsif cell == 0 && live_neighbors == 3
+                          elsif cell.zero? && live_neighbors == 3
                             1
                           else
                             0
