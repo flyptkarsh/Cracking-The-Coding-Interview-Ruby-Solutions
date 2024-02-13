@@ -48,7 +48,7 @@ def traverse_maze(maze)
 
     current_path << Point.new(row, col)
     at_end = row == maze.length - 1 && col == maze[0].length - 1
-    if at_end || get_path(maze, row, col += 1, current_path) || get_path(maze, row += 1, col, current_path)
+    if at_end || get_path(maze, row, col += 1, current_path) || get_path(maze, row + 1, col, current_path)
       @viable_path = current_path
       return true
     end

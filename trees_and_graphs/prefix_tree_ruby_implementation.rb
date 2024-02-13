@@ -24,7 +24,7 @@ class Trie
   end
 
   def find_word(word)
-    letters = word.chars
+    word.chars
     base = @root
     words_found = letter.all? { |letter| base = find_character(letter, base.next) }
     yield words_found, base if block_given

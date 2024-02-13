@@ -84,7 +84,7 @@ def dp_edit_distance(str1, str2)
     # minimum of three values.
     ed = 1 + [edit_distance(str1, str2, m, n - 1), # Insert
               edit_distance(str1, str2, m - 1, n), # Remove
-              edit_distance(str1, str2, m - 1, n - 1)    # Replace
+              edit_distance(str1, str2, m - 1, n - 1) # Replace
 ].min
     @db[m][n] = ed
     ed

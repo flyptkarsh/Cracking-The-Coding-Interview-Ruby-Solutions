@@ -27,13 +27,10 @@ end
 def one_edit_replace(first, second)
   found_difference = false
   first.chars.each_with_index do |val, index|
-    if val != second.chars[index]
-      if found_difference
-        return false
-      else
-        found_difference = true
-      end
-    end
+    next unless val != second.chars[index]
+    return false if found_difference
+
+    found_difference = true
   end
   true
 end

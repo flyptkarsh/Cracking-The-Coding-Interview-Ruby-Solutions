@@ -37,7 +37,7 @@ def find_overlap(l1, r1, l2, r2)
   length * height
 end
 
-l1 = Point.new(2, 1)
-r1 = Point.new(5, 5)
-l2 = Point.new(3, 2)
-r2 = Point.new(5, 7)
+Point.new(2, 1)
+Point.new(5, 5)
+Point.new(3, 2)
+Point.new(5, 7)

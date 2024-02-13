@@ -20,7 +20,7 @@ def brute_force_compress(str)
   count_consecutive = 0
   str.each_char.with_index do |char, index|
     count_consecutive += 1
-    next_char_different = ((index + 1) == str.chars.size || (str.chars[index + 1] != char))
+    next_char_different = (index + 1) == str.chars.size || (str.chars[index + 1] != char)
     if next_char_different
       compressed_str << (char << count_consecutive.to_s)
       count_consecutive = 0
@@ -50,7 +50,7 @@ def compress_solution_one(str)
   str_size = str_chars.size
   str_chars.each.with_index do |char, index|
     count_consecutive += 1
-    next_char_different = ((index + 1) == str_size || (str_chars[index + 1] != char))
+    next_char_different = (index + 1) == str_size || (str_chars[index + 1] != char)
     if next_char_different
       compressed_str << char
       compressed_str << count_consecutive.to_s
@@ -79,7 +79,7 @@ def compress_solution_two(str)
   count_consecutive = 0
   str_chars.each.with_index do |char, index|
     count_consecutive += 1
-    next_char_different = ((index + 1) == str_size || (str_chars[index + 1] != char))
+    next_char_different = (index + 1) == str_size || (str_chars[index + 1] != char)
     if next_char_different
       compressed_str << char
       compressed_str << count_consecutive.to_s
@@ -95,7 +95,7 @@ def compressed_size(str_chars, str_size)
   count_consecutive = 0
   str_chars.each_with_index do |char, index|
     count_consecutive += 1
-    next_char_different = ((index + 1) == str_size || (str_chars[index + 1] != char))
+    next_char_different = (index + 1) == str_size || (str_chars[index + 1] != char)
     next unless next_char_different
 
     final_size += 1

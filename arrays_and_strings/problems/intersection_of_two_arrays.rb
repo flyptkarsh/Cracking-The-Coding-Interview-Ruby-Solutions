@@ -20,7 +20,6 @@
 # The idea is to convert both arrays into sets, and then iterate over the
 # smallest set checking the presence of each element in the larger set.
 # Time complexity of this approach is \mathcal{O}(n + m)O(n+m) in the average case.
-require 'set'
 
 # syntax for converting an array into a set
 [1, 0, 1, 0, 3, 4, 5].to_set # => #<Set: {1, 0, 3, 4, 5}>

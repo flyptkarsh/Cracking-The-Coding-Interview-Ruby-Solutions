@@ -18,7 +18,7 @@ end
 def all_diagonals_for_matrix(array)
   diagonals = []
   array.each.with_index do |_row, index|
-    all_diagonals_row(array[index..-1]).each do |arr|
+    all_diagonals_row(array[index..]).each do |arr|
       diagonals.push(arr) unless arr.empty?
     end
   end

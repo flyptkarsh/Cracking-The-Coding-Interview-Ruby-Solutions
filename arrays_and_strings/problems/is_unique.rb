@@ -7,11 +7,9 @@
 def is_unique_chars?(str)
   char_set = {}
   str.chars.each do |char|
-    if char_set[char]
-      return false
-    else
-      char_set[char] = true
-    end
+    return false if char_set[char]
+
+    char_set[char] = true
   end
   true
 end

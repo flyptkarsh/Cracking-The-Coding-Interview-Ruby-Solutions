@@ -14,8 +14,6 @@
 # the maximum subarray at a given index is ether the itself
 # of the combination of itself and the previous maximum
 
-arr = [-2, 3, 2, -1]
-
 def kadane(arr)
   max_curr = arr[0]
   global_max = arr[0]

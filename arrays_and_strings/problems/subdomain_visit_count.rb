@@ -22,7 +22,7 @@
 def break_subdomains(str)
   all_domains = []
   ds = str.split('.')
-  (0).upto(ds.size - 1) do |i|
+  0.upto(ds.size - 1) do |i|
     first_i = ds[0..i].join('.')
     all_domains.push(first_i)
   end

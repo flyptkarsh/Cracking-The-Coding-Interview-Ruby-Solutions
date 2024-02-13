@@ -20,7 +20,7 @@ def with_k_distinct_chars(str, k)
   curr_longest = []
   arr = str.chars
   arr.each.with_index do |_v, i|
-    arr[i..-1].each.with_index do |_v2, i2|
+    arr[i..].each.with_index do |_v2, i2|
       char_map = count_chars(arr[i..i2])
       break if char_map.size > k
 
