@@ -20,17 +20,6 @@
 #  1  3  -1  -3 [5  3  6] 7       6
 #  1  3  -1  -3  5 [3  6  7]      7
 
-def max_sliding_window(arr, k)
-  max = arr[0]
-  arr.each.with_index do |_v, i|
-    if i + k - 1 < arr.size
-      window = arr[i..i + k]
-      max = window.max if window.max > max
-    end
-  end
-  max
-end
-
 def max_sliding_window(nums, k)
   return [] if nums.empty?
 
